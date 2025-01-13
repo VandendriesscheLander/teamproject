@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "466369120140",
+    "project_id": "voice-app-test-8w91ed",
+    "storage_bucket": "voice-app-test-8w91ed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466369120140:android:99099bf467988f7a0c78a9",
+        "android_client_info": {
+          "package_name": "com.mycompany.voiceapptest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPkKdaKABBEJ8V525PuIrsaNvgT0iCqVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
