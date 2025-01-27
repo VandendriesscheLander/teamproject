@@ -3,17 +3,16 @@ import whisper
 import tempfile
 import os
 import time
-import spacy
+import re
 import requests
 import json
-import re
 from werkzeug.utils import secure_filename
+from transformers import pipeline
 
 app = Flask(__name__)
 
-# Load both language models
-nlp_nl = spacy.load("nl_core_news_lg")
-nlp_en = spacy.load("en_core_web_lg")
+# Load the Hugging Face NER pipeline with RoBERTa
+nlp_ner = pipeline("ner", model="Jean-Baptiste/roberta-large-ner-english", aggregation_strategy="simple")
 
 def safe_delete(file_path, max_attempts=5):
     """Safely delete a file with multiple attempts"""
@@ -32,47 +31,45 @@ def safe_delete(file_path, max_attempts=5):
             return False
     return False
 
-def redact_personal_info(text, language='nl'):
-    """Redact personal information from text using Spacy NER"""
-    if language == 'en':
-        nlp = nlp_en
-        age_pattern = r'\b(?:\d{1,3})\s*(?:years?\s+old|years?|y\.o\.)\b'
-    else:  # Default to Dutch
-        nlp = nlp_nl
-        age_pattern = r'\b(?:\d{1,3})\s*(?:jaar\s+oud|jaar|j\.o\.|jaren)\b'
-    
-    doc = nlp(text)
-    
-    # Create a list of spans to redact
+def redact_personal_info(text, language='en'):
+    """Redact personal information from text using RoBERTa NER"""
+    age_patterns = {
+        'nl': [
+            r'\b(\d{1,3})\s*(?:jaar\s*oud|jarige?)\b',
+            r'\b(?:leeftijd\s+van\s+)(\d{1,3})\b'
+        ],
+        'en': [
+            r'\b(\d{1,3})\s*(?:years?\s*old|\-years?\-old|yr\s*old)\b',
+            r'\b(?:age(?:d)?\s+)(\d{1,3})\b'
+        ]
+    }
+
+    ner_results = nlp_ner(text)
+
+    entities_to_redact = {
+        'PER': '[NAME]' if language == 'en' else '[NAAM]',
+        'LOC': '[LOCATION]' if language == 'en' else '[LOCATIE]',
+        'ORG': '[ORGANIZATION]' if language == 'en' else '[ORGANISATIE]',
+        'GPE': '[PLACE]' if language == 'en' else '[PLAATS]',
+    }
+
     spans_to_redact = []
-    if language == 'en':
-        entities_to_redact = {
-            'PERSON': '[NAME]',
-            'LOC': '[LOCATION]',
-            'ORG': '[ORGANIZATION]',
-            'GPE': '[PLACE]',
-        }
-    else:
-        entities_to_redact = {
-            'PERSON': '[NAAM]',
-            'LOC': '[LOCATIE]',
-            'ORG': '[ORGANISATIE]',
-            'GPE': '[PLAATS]',
-        }
-    
-    for ent in doc.ents:
-        if ent.label_ in entities_to_redact:
-            spans_to_redact.append((ent.start_char, ent.end_char, entities_to_redact[ent.label_]))
-    
-    for match in re.finditer(age_pattern, text, re.IGNORECASE):
-        spans_to_redact.append((match.start(), match.end(), 
-                              '[AGE]' if language == 'en' else '[LEEFTIJD]'))
-    
+    for entity in ner_results:
+        entity_type = entity['entity_group']
+        if entity_type in entities_to_redact:
+            spans_to_redact.append((entity['start'], entity['end'], entities_to_redact[entity_type]))
+
+    patterns = age_patterns.get(language, age_patterns['en'])
+    for pattern in patterns:
+        for match in re.finditer(pattern, text, re.IGNORECASE):
+            age_replacement = '[AGE]' if language == 'en' else '[LEEFTIJD]'
+            spans_to_redact.append((match.start(), match.end(), age_replacement))
+
     spans_to_redact.sort(key=lambda x: x[0], reverse=True)
     redacted_text = text
     for start, end, replacement in spans_to_redact:
         redacted_text = redacted_text[:start] + replacement + redacted_text[end:]
-    
+
     return redacted_text
 
 @app.route('/transcribe', methods=['POST'])
@@ -128,6 +125,7 @@ def generate_questions():
             "Generate three probing questions based on the provided main question and answer. "
             "Each question should start with 1., 2., or 3. without additional text or explanation. "
             "Avoid referencing any information in square brackets."
+            "Respond in the language of the answer."
         )
 
         request_payload = {
@@ -141,11 +139,6 @@ def generate_questions():
 
         url = "http://localhost:11434/api/chat"
         response = requests.post(url, json=request_payload)
-
-        # Debugging: Log response details
-        print(f"Request payload: {request_payload}")
-        print(f"Response status code: {response.status_code}")
-        print(f"Response text: {response.text}")
 
         response.raise_for_status()
         response_json = response.json()
@@ -164,11 +157,124 @@ def generate_questions():
         })
 
     except requests.exceptions.RequestException as e:
-        print(f"Error communicating with the Llama API: {e}")  # Debugging: Log exception
+        print(f"Error communicating with the Llama API: {e}")
         return jsonify({'error': f'Error communicating with the Llama API: {str(e)}'}), 500
     except Exception as e:
-        print(f"General error: {e}")  # Debugging: Log general exceptions
+        print(f"General error: {e}")
         return jsonify({'error': str(e)}), 500
 
+        
+@app.route('/extract-themes', methods=['POST'])
+def extract_themes():
+    try:
+        # Input validation
+        data = request.json
+        required_fields = ['mainquestion', 'Q1', 'Q2', 'Q3', 'mainanswer', 'A1', 'A2', 'A3']
+        if not data or not all(field in data for field in required_fields):
+            return jsonify({
+                'error': 'Invalid request. Missing required fields.',
+                'required_fields': required_fields
+            }), 400
+
+        # Base JSON template
+        base_json = {
+            "translated_questions_and_answers": {
+                "mainquestion": "",
+                "Q1": "",
+                "Q2": "",
+                "Q3": "",
+                "mainanswer": "",
+                "A1": "",
+                "A2": "",
+                "A3": ""
+            },
+            "themes": ["", "", ""]
+        }
+
+        # Create a cleaner prompt structure
+        prompt = (
+            "Translate the following questions and answers to Dutch and identify three key themes based mostly on the answers.\n\n"
+            "Format your response as valid JSON using this exact structure:\n"
+            f"{json.dumps(base_json, indent=2)}\n\n"
+            "Content to translate and analyze:\n"
+            f"Main Question: {data['mainquestion']}\n"
+            f"Q1: {data['Q1']}\n"
+            f"Q2: {data['Q2']}\n"
+            f"Q3: {data['Q3']}\n"
+            f"Main Answer: {data['mainanswer']}\n"
+            f"A1: {data['A1']}\n"
+            f"A2: {data['A2']}\n"
+            f"A3: {data['A3']}\n\n"
+            "Important: Respond only with the JSON structure, no additional text."
+        )
+
+        # Request to Llama API
+        request_payload = {
+            "model": "llama3.1",
+            "messages": [
+                {
+                    "role": "system", 
+                    "content": "You are a precise JSON generator that translates content to Dutch and extracts themes. Always respond with valid JSON only. If A1, A2 and A3 are not recorded, focus on the main question and answer."
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            "stream": False
+        }
+
+        # Make API request
+        url = "http://localhost:11434/api/chat"
+        response = requests.post(url, json=request_payload, timeout=30)
+        response.raise_for_status()
+        
+        # Parse response
+        response_json = response.json()
+        ai_reply = response_json.get("message", {}).get("content", "")
+
+        # Clean and validate JSON response
+        cleaned_reply = ai_reply.strip()
+        # Remove any markdown code block indicators if present
+        if cleaned_reply.startswith("```json\n"):
+            cleaned_reply = cleaned_reply[7:]
+        if cleaned_reply.endswith("\n```"):
+            cleaned_reply = cleaned_reply[:-4]
+        cleaned_reply = cleaned_reply.strip()
+
+        try:
+            result = json.loads(cleaned_reply)
+            # Validate structure
+            if not isinstance(result, dict) or \
+               "translated_questions_and_answers" not in result or \
+               "themes" not in result or \
+               not isinstance(result["themes"], list) or \
+               len(result["themes"]) != 3:
+                raise ValueError("Invalid JSON structure in response")
+            
+            return jsonify(result)
+            
+        except json.JSONDecodeError as e:
+            print(f"JSON Parse Error: {e}")
+            print(f"Attempted to parse: {cleaned_reply}")
+            return jsonify({
+                'error': 'Failed to parse AI response as JSON',
+                'details': str(e)
+            }), 500
+
+    except requests.exceptions.RequestException as e:
+        print(f"Llama API Error: {e}")
+        return jsonify({
+            'error': 'Error communicating with the Llama API',
+            'details': str(e)
+        }), 500
+    except Exception as e:
+        print(f"General Error: {e}")
+        return jsonify({
+            'error': 'Internal server error',
+            'details': str(e)
+        }), 500
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8080)
