@@ -8,11 +8,15 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 import requests
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY')
 bcrypt = Bcrypt(app)
+
 
 # Firebase setup
 cred = credentials.Certificate(os.getenv('FIREBASE_CREDENTIALS_PATH'))
