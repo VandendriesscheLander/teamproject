@@ -15,7 +15,7 @@ class SttApiCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'STT API',
-      apiUrl: 'http://172.30.248.78:8080/transcribe',
+      apiUrl: 'http://172.30.248.75:8080/transcribe',
       callType: ApiCallType.POST,
       headers: {},
       params: {
@@ -49,7 +49,7 @@ class ProbingQuestionsCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Probing Questions',
-      apiUrl: 'http://172.30.248.78:8080/questions',
+      apiUrl: 'http://172.30.248.75:8080/questions',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -102,7 +102,7 @@ class ExtractThemesCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Extract Themes',
-      apiUrl: 'http://172.30.248.78:8080/extract-themes',
+      apiUrl: 'http://172.30.248.75:8080/extract-themes',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

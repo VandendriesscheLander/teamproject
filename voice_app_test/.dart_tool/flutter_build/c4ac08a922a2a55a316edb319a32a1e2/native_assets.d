@@ -1,0 +1,1 @@
+ C:\\Users\\lande\\OneDrive\\Documenten\\teamproject\\github\\teamproject\\voice_app_test\\.dart_tool\\flutter_build\\c4ac08a922a2a55a316edb319a32a1e2\\native_assets.yaml: 

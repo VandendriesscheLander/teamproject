@@ -1,0 +1,400 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.mycompany.voiceapptest"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="34" />
+9-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:4:5-66
+11-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+12-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:5:5-71
+12-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:5:22-68
+13    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+14    <!-- <uses-sdk android:minSdkVersion="21" /> -->
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\lande\.gradle\caches\transforms-3\bcaf847f9f6b2c9ff0657affa8433731\transformed\jetified-firebase-firestore-25.1.1\AndroidManifest.xml:10:5-79
+15-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\lande\.gradle\caches\transforms-3\bcaf847f9f6b2c9ff0657affa8433731\transformed\jetified-firebase-firestore-25.1.1\AndroidManifest.xml:10:22-76
+16
+17    <permission
+17-->[androidx.core:core:1.13.1] C:\Users\lande\.gradle\caches\transforms-3\34d749803c85e228a50a26e83c446f9c\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+18        android:name="com.mycompany.voiceapptest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+18-->[androidx.core:core:1.13.1] C:\Users\lande\.gradle\caches\transforms-3\34d749803c85e228a50a26e83c446f9c\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+19        android:protectionLevel="signature" />
+19-->[androidx.core:core:1.13.1] C:\Users\lande\.gradle\caches\transforms-3\34d749803c85e228a50a26e83c446f9c\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+20
+21    <uses-permission android:name="com.mycompany.voiceapptest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+21-->[androidx.core:core:1.13.1] C:\Users\lande\.gradle\caches\transforms-3\34d749803c85e228a50a26e83c446f9c\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.13.1] C:\Users\lande\.gradle\caches\transforms-3\34d749803c85e228a50a26e83c446f9c\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+22
+23    <application
+23-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:8:5-62:19
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.13.1] C:\Users\lande\.gradle\caches\transforms-3\34d749803c85e228a50a26e83c446f9c\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+25        android:extractNativeLibs="false"
+26        android:icon="@mipmap/ic_launcher"
+26-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:11:9-43
+27        android:label="VoiceAppTest"
+27-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:9:9-37
+28        android:requestLegacyExternalStorage="true" >
+28-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:12:9-52
+29        <activity
+29-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:14:9-52:20
+30            android:name="com.mycompany.voiceapptest.MainActivity"
+30-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:15:13-41
+31            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+31-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:19:13-163
+32            android:exported="true"
+32-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:16:13-36
+33            android:hardwareAccelerated="true"
+33-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:20:13-47
+34            android:launchMode="singleTop"
+34-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:17:13-43
+35            android:theme="@style/LaunchTheme"
+35-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:18:13-47
+36            android:windowSoftInputMode="adjustResize" >
+36-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:21:13-55
+37
+38            <!--
+39                 Specifies an Android theme to apply to this Activity as soon as
+40                 the Android process has started. This theme is visible to the user
+41                 while the Flutter UI initializes. After that, this theme continues
+42                 to determine the Window background behind the Flutter UI.
+43            -->
+44            <meta-data
+44-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:26:13-29:17
+45                android:name="io.flutter.embedding.android.NormalTheme"
+45-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:27:15-70
+46                android:resource="@style/NormalTheme" />
+46-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:28:15-52
+47            <!--
+48                 Displays an Android View that continues showing the launch screen
+49                 Drawable until Flutter paints its first frame, then this splash
+50                 screen fades out. A splash screen is useful to avoid any visual
+51                 gap between the end of Android's launch screen and the painting of
+52                 Flutter's first frame.
+53            -->
+54            <meta-data
+54-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:35:13-38:17
+55                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+55-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:36:15-79
+56                android:resource="@drawable/launch_background" />
+56-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:37:15-61
+57
+58            <intent-filter>
+58-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:39:13-42:29
+59                <action android:name="android.intent.action.MAIN" />
+59-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:40:17-68
+59-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:40:25-66
+60
+61                <category android:name="android.intent.category.LAUNCHER" />
+61-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:41:17-76
+61-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:41:27-74
+62            </intent-filter>
+63            <!-- Deep linking -->
+64            <meta-data
+64-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:44:13-90
+65                android:name="flutter_deeplinking_enabled"
+65-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:44:24-66
+66                android:value="true" />
+66-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:44:67-87
+67
+68            <intent-filter android:autoVerify="true" >
+68-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:45:13-50:29
+68-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:45:28-53
+69                <action android:name="android.intent.action.VIEW" />
+69-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:46:17-69
+69-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:46:25-66
+70
+71                <category android:name="android.intent.category.DEFAULT" />
+71-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:47:17-76
+71-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:47:27-73
+72                <category android:name="android.intent.category.BROWSABLE" />
+72-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:48:17-78
+72-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:48:27-75
+73
+74                <data
+74-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:49:17-87
+75                    android:host="voiceapptest.com"
+75-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:49:53-84
+76                    android:scheme="voiceapptest" />
+76-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:49:23-52
+77            </intent-filter>
+78        </activity>
+79
+80        <!--
+81             Don't delete the meta-data below.
+82             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+83        -->
+84        <meta-data
+84-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:56:9-58:33
+85            android:name="flutterEmbedding"
+85-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:57:13-44
+86            android:value="2" />
+86-->C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\android\app\src\main\AndroidManifest.xml:58:13-30
+87
+88        <service
+88-->[:cloud_firestore] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-14:19
+89            android:name="com.google.firebase.components.ComponentDiscoveryService"
+89-->[:cloud_firestore] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:10:18-89
+90            android:directBootAware="true"
+90-->[com.google.firebase:firebase-common:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\d91e82240ae8b3acd8f1dd236fc1425f\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+91            android:exported="false" >
+91-->[com.google.firebase:firebase-perf:21.0.2] C:\Users\lande\.gradle\caches\transforms-3\e6a9c5f58dd0a3e13710b7ab5385f51f\transformed\jetified-firebase-perf-21.0.2\AndroidManifest.xml:13:13-37
+92            <meta-data
+92-->[:cloud_firestore] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-13:85
+93                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+93-->[:cloud_firestore] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:12:17-134
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[:cloud_firestore] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:13:17-82
+95            <meta-data
+95-->[:firebase_performance] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\firebase_performance\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-15:85
+96                android:name="com.google.firebase.components:io.flutter.plugins.firebase.performance.FlutterFirebaseAppRegistrar"
+96-->[:firebase_performance] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\firebase_performance\intermediates\merged_manifest\release\AndroidManifest.xml:14:17-130
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[:firebase_performance] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\firebase_performance\intermediates\merged_manifest\release\AndroidManifest.xml:15:17-82
+98            <meta-data
+98-->[:firebase_core] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-13:85
+99                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+99-->[:firebase_core] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:12:17-124
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[:firebase_core] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:13:17-82
+101            <meta-data
+101-->[com.google.firebase:firebase-perf:21.0.2] C:\Users\lande\.gradle\caches\transforms-3\e6a9c5f58dd0a3e13710b7ab5385f51f\transformed\jetified-firebase-perf-21.0.2\AndroidManifest.xml:14:13-16:85
+102                android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfKtxRegistrar"
+102-->[com.google.firebase:firebase-perf:21.0.2] C:\Users\lande\.gradle\caches\transforms-3\e6a9c5f58dd0a3e13710b7ab5385f51f\transformed\jetified-firebase-perf-21.0.2\AndroidManifest.xml:15:17-112
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[com.google.firebase:firebase-perf:21.0.2] C:\Users\lande\.gradle\caches\transforms-3\e6a9c5f58dd0a3e13710b7ab5385f51f\transformed\jetified-firebase-perf-21.0.2\AndroidManifest.xml:16:17-82
+104            <meta-data
+104-->[com.google.firebase:firebase-perf:21.0.2] C:\Users\lande\.gradle\caches\transforms-3\e6a9c5f58dd0a3e13710b7ab5385f51f\transformed\jetified-firebase-perf-21.0.2\AndroidManifest.xml:17:13-19:85
+105                android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar"
+105-->[com.google.firebase:firebase-perf:21.0.2] C:\Users\lande\.gradle\caches\transforms-3\e6a9c5f58dd0a3e13710b7ab5385f51f\transformed\jetified-firebase-perf-21.0.2\AndroidManifest.xml:18:17-109
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[com.google.firebase:firebase-perf:21.0.2] C:\Users\lande\.gradle\caches\transforms-3\e6a9c5f58dd0a3e13710b7ab5385f51f\transformed\jetified-firebase-perf-21.0.2\AndroidManifest.xml:19:17-82
+107            <meta-data
+107-->[com.google.firebase:firebase-sessions:2.0.0] C:\Users\lande\.gradle\caches\transforms-3\92b6ca55bf7aa9c8e7954ec903fe618d\transformed\jetified-firebase-sessions-2.0.0\AndroidManifest.xml:29:13-31:85
+108                android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar"
+108-->[com.google.firebase:firebase-sessions:2.0.0] C:\Users\lande\.gradle\caches\transforms-3\92b6ca55bf7aa9c8e7954ec903fe618d\transformed\jetified-firebase-sessions-2.0.0\AndroidManifest.xml:30:17-117
+109                android:value="com.google.firebase.components.ComponentRegistrar" />
+109-->[com.google.firebase:firebase-sessions:2.0.0] C:\Users\lande\.gradle\caches\transforms-3\92b6ca55bf7aa9c8e7954ec903fe618d\transformed\jetified-firebase-sessions-2.0.0\AndroidManifest.xml:31:17-82
+110            <meta-data
+110-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\lande\.gradle\caches\transforms-3\bcaf847f9f6b2c9ff0657affa8433731\transformed\jetified-firebase-firestore-25.1.1\AndroidManifest.xml:17:13-19:85
+111                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+111-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\lande\.gradle\caches\transforms-3\bcaf847f9f6b2c9ff0657affa8433731\transformed\jetified-firebase-firestore-25.1.1\AndroidManifest.xml:18:17-122
+112                android:value="com.google.firebase.components.ComponentRegistrar" />
+112-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\lande\.gradle\caches\transforms-3\bcaf847f9f6b2c9ff0657affa8433731\transformed\jetified-firebase-firestore-25.1.1\AndroidManifest.xml:19:17-82
+113            <meta-data
+113-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\lande\.gradle\caches\transforms-3\bcaf847f9f6b2c9ff0657affa8433731\transformed\jetified-firebase-firestore-25.1.1\AndroidManifest.xml:20:13-22:85
+114                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+114-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\lande\.gradle\caches\transforms-3\bcaf847f9f6b2c9ff0657affa8433731\transformed\jetified-firebase-firestore-25.1.1\AndroidManifest.xml:21:17-111
+115                android:value="com.google.firebase.components.ComponentRegistrar" />
+115-->[com.google.firebase:firebase-firestore:25.1.1] C:\Users\lande\.gradle\caches\transforms-3\bcaf847f9f6b2c9ff0657affa8433731\transformed\jetified-firebase-firestore-25.1.1\AndroidManifest.xml:22:17-82
+116            <meta-data
+116-->[com.google.firebase:firebase-config:22.0.1] C:\Users\lande\.gradle\caches\transforms-3\a0aea8c0f97e515caaeaa7d5e469c058\transformed\jetified-firebase-config-22.0.1\AndroidManifest.xml:29:13-31:85
+117                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.FirebaseRemoteConfigKtxRegistrar"
+117-->[com.google.firebase:firebase-config:22.0.1] C:\Users\lande\.gradle\caches\transforms-3\a0aea8c0f97e515caaeaa7d5e469c058\transformed\jetified-firebase-config-22.0.1\AndroidManifest.xml:30:17-128
+118                android:value="com.google.firebase.components.ComponentRegistrar" />
+118-->[com.google.firebase:firebase-config:22.0.1] C:\Users\lande\.gradle\caches\transforms-3\a0aea8c0f97e515caaeaa7d5e469c058\transformed\jetified-firebase-config-22.0.1\AndroidManifest.xml:31:17-82
+119            <meta-data
+119-->[com.google.firebase:firebase-config:22.0.1] C:\Users\lande\.gradle\caches\transforms-3\a0aea8c0f97e515caaeaa7d5e469c058\transformed\jetified-firebase-config-22.0.1\AndroidManifest.xml:32:13-34:85
+120                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
+120-->[com.google.firebase:firebase-config:22.0.1] C:\Users\lande\.gradle\caches\transforms-3\a0aea8c0f97e515caaeaa7d5e469c058\transformed\jetified-firebase-config-22.0.1\AndroidManifest.xml:33:17-117
+121                android:value="com.google.firebase.components.ComponentRegistrar" />
+121-->[com.google.firebase:firebase-config:22.0.1] C:\Users\lande\.gradle\caches\transforms-3\a0aea8c0f97e515caaeaa7d5e469c058\transformed\jetified-firebase-config-22.0.1\AndroidManifest.xml:34:17-82
+122            <meta-data
+122-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\lande\.gradle\caches\transforms-3\5764a626ffb62c830e08b4ed3fb182d8\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:15:13-17:85
+123                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+123-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\lande\.gradle\caches\transforms-3\5764a626ffb62c830e08b4ed3fb182d8\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:16:17-130
+124                android:value="com.google.firebase.components.ComponentRegistrar" />
+124-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\lande\.gradle\caches\transforms-3\5764a626ffb62c830e08b4ed3fb182d8\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:17:17-82
+125            <meta-data
+125-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\lande\.gradle\caches\transforms-3\5764a626ffb62c830e08b4ed3fb182d8\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:18:13-20:85
+126                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+126-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\lande\.gradle\caches\transforms-3\5764a626ffb62c830e08b4ed3fb182d8\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:19:17-127
+127                android:value="com.google.firebase.components.ComponentRegistrar" />
+127-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\lande\.gradle\caches\transforms-3\5764a626ffb62c830e08b4ed3fb182d8\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:20:17-82
+128            <meta-data
+128-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\4c71b689dcc42a6a1d0f58d046a15b14\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+129                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+129-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\4c71b689dcc42a6a1d0f58d046a15b14\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+130                android:value="com.google.firebase.components.ComponentRegistrar" />
+130-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\4c71b689dcc42a6a1d0f58d046a15b14\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+131            <meta-data
+131-->[com.google.firebase:firebase-common:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\d91e82240ae8b3acd8f1dd236fc1425f\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+132                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+132-->[com.google.firebase:firebase-common:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\d91e82240ae8b3acd8f1dd236fc1425f\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+133                android:value="com.google.firebase.components.ComponentRegistrar" />
+133-->[com.google.firebase:firebase-common:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\d91e82240ae8b3acd8f1dd236fc1425f\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+134            <meta-data
+134-->[com.google.firebase:firebase-abt:21.1.1] C:\Users\lande\.gradle\caches\transforms-3\b7b243b5fb143028522214f43c077f0a\transformed\jetified-firebase-abt-21.1.1\AndroidManifest.xml:12:13-14:85
+135                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
+135-->[com.google.firebase:firebase-abt:21.1.1] C:\Users\lande\.gradle\caches\transforms-3\b7b243b5fb143028522214f43c077f0a\transformed\jetified-firebase-abt-21.1.1\AndroidManifest.xml:13:17-109
+136                android:value="com.google.firebase.components.ComponentRegistrar" />
+136-->[com.google.firebase:firebase-abt:21.1.1] C:\Users\lande\.gradle\caches\transforms-3\b7b243b5fb143028522214f43c077f0a\transformed\jetified-firebase-abt-21.1.1\AndroidManifest.xml:14:17-82
+137            <meta-data
+137-->[com.google.firebase:firebase-datatransport:18.1.8] C:\Users\lande\.gradle\caches\transforms-3\00d8722efb4e029f990b1d5d6833ce40\transformed\jetified-firebase-datatransport-18.1.8\AndroidManifest.xml:27:13-29:85
+138                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+138-->[com.google.firebase:firebase-datatransport:18.1.8] C:\Users\lande\.gradle\caches\transforms-3\00d8722efb4e029f990b1d5d6833ce40\transformed\jetified-firebase-datatransport-18.1.8\AndroidManifest.xml:28:17-115
+139                android:value="com.google.firebase.components.ComponentRegistrar" />
+139-->[com.google.firebase:firebase-datatransport:18.1.8] C:\Users\lande\.gradle\caches\transforms-3\00d8722efb4e029f990b1d5d6833ce40\transformed\jetified-firebase-datatransport-18.1.8\AndroidManifest.xml:29:17-82
+140        </service>
+141
+142        <activity
+142-->[:url_launcher_android] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-13:74
+143            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+143-->[:url_launcher_android] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-74
+144            android:exported="false"
+144-->[:url_launcher_android] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-37
+145            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+145-->[:url_launcher_android] C:\Users\lande\OneDrive\Documenten\teamproject\github\teamproject\voice_app_test\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-71
+146
+147        <service
+147-->[com.google.firebase:firebase-sessions:2.0.0] C:\Users\lande\.gradle\caches\transforms-3\92b6ca55bf7aa9c8e7954ec903fe618d\transformed\jetified-firebase-sessions-2.0.0\AndroidManifest.xml:22:9-25:40
+148            android:name="com.google.firebase.sessions.SessionLifecycleService"
+148-->[com.google.firebase:firebase-sessions:2.0.0] C:\Users\lande\.gradle\caches\transforms-3\92b6ca55bf7aa9c8e7954ec903fe618d\transformed\jetified-firebase-sessions-2.0.0\AndroidManifest.xml:23:13-80
+149            android:enabled="true"
+149-->[com.google.firebase:firebase-sessions:2.0.0] C:\Users\lande\.gradle\caches\transforms-3\92b6ca55bf7aa9c8e7954ec903fe618d\transformed\jetified-firebase-sessions-2.0.0\AndroidManifest.xml:24:13-35
+150            android:exported="false" />
+150-->[com.google.firebase:firebase-sessions:2.0.0] C:\Users\lande\.gradle\caches\transforms-3\92b6ca55bf7aa9c8e7954ec903fe618d\transformed\jetified-firebase-sessions-2.0.0\AndroidManifest.xml:25:13-37
+151
+152        <uses-library
+152-->[androidx.window:window:1.2.0] C:\Users\lande\.gradle\caches\transforms-3\7da2e98b29151f5ef4f0f33378d5f82c\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
+153            android:name="androidx.window.extensions"
+153-->[androidx.window:window:1.2.0] C:\Users\lande\.gradle\caches\transforms-3\7da2e98b29151f5ef4f0f33378d5f82c\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
+154            android:required="false" />
+154-->[androidx.window:window:1.2.0] C:\Users\lande\.gradle\caches\transforms-3\7da2e98b29151f5ef4f0f33378d5f82c\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
+155        <uses-library
+155-->[androidx.window:window:1.2.0] C:\Users\lande\.gradle\caches\transforms-3\7da2e98b29151f5ef4f0f33378d5f82c\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
+156            android:name="androidx.window.sidecar"
+156-->[androidx.window:window:1.2.0] C:\Users\lande\.gradle\caches\transforms-3\7da2e98b29151f5ef4f0f33378d5f82c\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
+157            android:required="false" />
+157-->[androidx.window:window:1.2.0] C:\Users\lande\.gradle\caches\transforms-3\7da2e98b29151f5ef4f0f33378d5f82c\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+158
+159        <activity
+159-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\lande\.gradle\caches\transforms-3\1a5e9f202125d44cf1b06385c915f6b4\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+160            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+160-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\lande\.gradle\caches\transforms-3\1a5e9f202125d44cf1b06385c915f6b4\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+161            android:exported="false"
+161-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\lande\.gradle\caches\transforms-3\1a5e9f202125d44cf1b06385c915f6b4\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+162            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+162-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\lande\.gradle\caches\transforms-3\1a5e9f202125d44cf1b06385c915f6b4\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+163
+164        <provider
+164-->[com.google.firebase:firebase-common:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\d91e82240ae8b3acd8f1dd236fc1425f\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+165            android:name="com.google.firebase.provider.FirebaseInitProvider"
+165-->[com.google.firebase:firebase-common:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\d91e82240ae8b3acd8f1dd236fc1425f\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+166            android:authorities="com.mycompany.voiceapptest.firebaseinitprovider"
+166-->[com.google.firebase:firebase-common:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\d91e82240ae8b3acd8f1dd236fc1425f\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+167            android:directBootAware="true"
+167-->[com.google.firebase:firebase-common:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\d91e82240ae8b3acd8f1dd236fc1425f\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+168            android:exported="false"
+168-->[com.google.firebase:firebase-common:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\d91e82240ae8b3acd8f1dd236fc1425f\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+169            android:initOrder="100" />
+169-->[com.google.firebase:firebase-common:21.0.0] C:\Users\lande\.gradle\caches\transforms-3\d91e82240ae8b3acd8f1dd236fc1425f\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+170
+171        <meta-data
+171-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\lande\.gradle\caches\transforms-3\c8a1f842bcca93763dc0a71928a98a8e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+172            android:name="com.google.android.gms.version"
+172-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\lande\.gradle\caches\transforms-3\c8a1f842bcca93763dc0a71928a98a8e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+173            android:value="@integer/google_play_services_version" />
+173-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\lande\.gradle\caches\transforms-3\c8a1f842bcca93763dc0a71928a98a8e\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+174
+175        <provider
+175-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\lande\.gradle\caches\transforms-3\1e5c8f659fc2581ee96769bf4d1267b8\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
+176            android:name="androidx.startup.InitializationProvider"
+176-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\lande\.gradle\caches\transforms-3\1e5c8f659fc2581ee96769bf4d1267b8\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:25:13-67
+177            android:authorities="com.mycompany.voiceapptest.androidx-startup"
+177-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\lande\.gradle\caches\transforms-3\1e5c8f659fc2581ee96769bf4d1267b8\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:26:13-68
+178            android:exported="false" >
+178-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\lande\.gradle\caches\transforms-3\1e5c8f659fc2581ee96769bf4d1267b8\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:27:13-37
+179            <meta-data
+179-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\lande\.gradle\caches\transforms-3\1e5c8f659fc2581ee96769bf4d1267b8\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+180                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+180-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\lande\.gradle\caches\transforms-3\1e5c8f659fc2581ee96769bf4d1267b8\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+181                android:value="androidx.startup" />
+181-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\lande\.gradle\caches\transforms-3\1e5c8f659fc2581ee96769bf4d1267b8\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+182            <meta-data
+182-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+183                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+183-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+184                android:value="androidx.startup" />
+184-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+185        </provider>
+186
+187        <service
+187-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\323a025fd4aa72354bab72a18f180ec6\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:28:9-34:19
+188            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+188-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\323a025fd4aa72354bab72a18f180ec6\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:29:13-103
+189            android:exported="false" >
+189-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\323a025fd4aa72354bab72a18f180ec6\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:30:13-37
+190            <meta-data
+190-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\323a025fd4aa72354bab72a18f180ec6\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:31:13-33:39
+191                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+191-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\323a025fd4aa72354bab72a18f180ec6\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:32:17-94
+192                android:value="cct" />
+192-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\323a025fd4aa72354bab72a18f180ec6\transformed\jetified-transport-backend-cct-3.1.9\AndroidManifest.xml:33:17-36
+193        </service>
+194
+195        <receiver
+195-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+196            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+196-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+197            android:directBootAware="false"
+197-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+198            android:enabled="true"
+198-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+199            android:exported="true"
+199-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+200            android:permission="android.permission.DUMP" >
+200-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+201            <intent-filter>
+201-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+202                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+202-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+202-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+203            </intent-filter>
+204            <intent-filter>
+204-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+205                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+205-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+205-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+206            </intent-filter>
+207            <intent-filter>
+207-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+208                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+208-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+208-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+209            </intent-filter>
+210            <intent-filter>
+210-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+211                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+211-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+211-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\lande\.gradle\caches\transforms-3\e57e12181c3bf917d71112b20c4c6bf3\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+212            </intent-filter>
+213        </receiver>
+214
+215        <service
+215-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\6ca4938965b8dfe098a6b2f73ec9f535\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:26:9-30:19
+216            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+216-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\6ca4938965b8dfe098a6b2f73ec9f535\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:27:13-117
+217            android:exported="false"
+217-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\6ca4938965b8dfe098a6b2f73ec9f535\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:28:13-37
+218            android:permission="android.permission.BIND_JOB_SERVICE" >
+218-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\6ca4938965b8dfe098a6b2f73ec9f535\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:29:13-69
+219        </service>
+220
+221        <receiver
+221-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\6ca4938965b8dfe098a6b2f73ec9f535\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:32:9-34:40
+222            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+222-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\6ca4938965b8dfe098a6b2f73ec9f535\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:33:13-132
+223            android:exported="false" />
+223-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\lande\.gradle\caches\transforms-3\6ca4938965b8dfe098a6b2f73ec9f535\transformed\jetified-transport-runtime-3.1.9\AndroidManifest.xml:34:13-37
+224    </application>
+225
+226</manifest>

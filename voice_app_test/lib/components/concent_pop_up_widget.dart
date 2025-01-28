@@ -43,7 +43,7 @@ class _ConcentPopUpWidgetState extends State<ConcentPopUpWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: 350.0,
-      height: 530.0,
+      height: 515.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         border: Border.all(
@@ -86,7 +86,7 @@ class _ConcentPopUpWidgetState extends State<ConcentPopUpWidget> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 15.0, 44.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 15.0, 15.0),
                 child: FFButtonWidget(
                   onPressed: () {
                     print('Button pressed ...');
@@ -116,7 +116,7 @@ class _ConcentPopUpWidgetState extends State<ConcentPopUpWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 44.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     Navigator.pop(context);
